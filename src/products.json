@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "title": "NVIDIA 4070",
+    "title": "NVIDIA 4070 Super",
     "description": "NVIDIA",
-    "price": 1300,
-    "thumbnail": "https://dlcdnwebimgs.asus.com/gain/32d8b7ad-5b28-485b-b440-54813c57e4cb/w692",
+    "price": 1200,
+    "thumbnail": "N/A",
     "code": "AABB2",
-    "stock": 5
+    "stock": 10
   },
   {
     "id": 2,

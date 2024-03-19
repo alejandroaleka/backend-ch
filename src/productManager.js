@@ -86,6 +86,7 @@ class ProductManager {
         }
     }
 
+    //Actualizacion de productos por id y datos a actualizar
     async updateProduct(id, data) {
         try {
           const products = await this.getProducts();
@@ -99,6 +100,23 @@ class ProductManager {
           const productsString = JSON.stringify(products, null, 2);
           await fs.promises.writeFile(this.path, productsString, "utf-8");
           console.log("Producto actualizado correctamente");
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      //Eliminacion de un producto dado su id
+      async deleteProduct(id) {
+        try {
+          const products = await this.getProducts();
+          const index = products.findIndex((product) => product.id === id);
+          if (index === -1) {
+            throw new Error(`No se encontró ningún producto con el id ${id}`);
+          }
+          products.splice(index, 1);
+          const productsString = JSON.stringify(products, null, 2);
+          await fs.promises.writeFile(this.path, productsString, "utf-8");
+          console.log("Producto eliminado correctamente");
         } catch (error) {
           console.error(error);
         }

@@ -1,11 +1,12 @@
 const file = "src/products.json";
 const ProductManager = require("./productManager");
 
-const producto = new ProductManager(file);
+const manager = new ProductManager(file);
 
 console.clear();
 
-console.log(producto.getProducts());
+const productos = await manager.getProducts();
+console.log(productos);
 
 const data = {
     title: "producto prueba",
@@ -25,14 +26,33 @@ const data2 = {
     stock: 25
 }
 
-console.log(producto.addProduct(data));
-console.log(producto.addProduct(data2));
+const data3 = {
+    "title": "NVIDIA 4070 Super",
+    "description": "NVIDIA",
+    "price": 1200,
+    "thumbnail": "N/A",
+    "code": "AABB2",
+    "stock": 10
+  }
 
 
-console.log(producto.getProducts());
+const result = await manager.addProduct(data);
+console.log(result);
 
-console.log(producto.getProductById(1));
+const result2 = await manager.addProduct(data2);
+console.log(result2);
 
-console.log(producto.addProduct(data));
+const result3 = await manager.getProducts()
+console.log(result3);
 
-console.log(producto.getProductById(3));
+const result4 = await manager.getProductById(1);
+console.log(result4);
+
+const result5 = await manager.addProduct(data);
+console.log(result5);
+
+const result6 = await manager.getProductById(3);
+console.log(result6);
+
+const result7 = await manager.updateProduct(1, data3);
+console.log(result7);
