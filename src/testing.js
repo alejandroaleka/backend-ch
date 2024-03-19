@@ -1,6 +1,7 @@
+const file = "src/products.json";
 const ProductManager = require("./productManager");
 
-const producto = new ProductManager();
+const producto = new ProductManager(file);
 
 console.clear();
 

@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "title": "NVIDIA 4070",
+    "description": "NVIDIA",
+    "price": 1300,
+    "thumbnail": "https://dlcdnwebimgs.asus.com/gain/32d8b7ad-5b28-485b-b440-54813c57e4cb/w692",
+    "code": "AABB2",
+    "stock": 5
+  },
+  {
+    "id": 2,
+    "title": "Ryzen 5800X3D",
+    "description": "AMD CPU",
+    "price": 399,
+    "thumbnail": "https://cdn.videocardz.com/1/2022/04/AMD-5800X3D-1-768x577.jpg",
+    "code": "BCDEF",
+    "stock": 25
+  },
+  {
+    "id": 3,
+    "title": "Asus TUF b550-m",
+    "description": "AMD MB Ryzen 5000",
+    "price": 399,
+    "thumbnail": "none",
+    "code": "MMBBC",
+    "stock": 20
+  },
+  {
+    "id": 4,
+    "title": "Asus TUF b550-m",
+    "description": "AMD MB Ryzen 5000",
+    "price": 399,
+    "thumbnail": "none",
+    "code": "asdf",
+    "stock": 10,
+    "status": true
+  },
+  {
+    "id": 5,
+    "title": "producto prueba",
+    "description": "Este es un producto de prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "abc123",
+    "stock": 25
+  },
+  {
+    "id": 6,
+    "title": "otro prod",
+    "description": "Este es un producto de prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "abcasdfas123",
+    "stock": 25
+  }
+]
