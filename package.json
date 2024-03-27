@@ -1,11 +1,18 @@
 {
-  "name": "clase01",
+  "name": "desafioCoder",
   "version": "1.0.0",
   "description": "clase01",
-  "main": "index.js",
+  "main": "./src/productManager.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon ./src/app.js",
+    "start": "node ./src/app.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
 }
