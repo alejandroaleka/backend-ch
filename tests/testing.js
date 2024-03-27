@@ -1,5 +1,5 @@
-const file = "src/products.json";
-const ProductManager = require("./productManager");
+const file = "data/products.json";
+import ProductManager from "../src/productManager.js";
 
 const manager = new ProductManager(file);
 
