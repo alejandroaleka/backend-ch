@@ -1,22 +1,20 @@
 import express from "express";
 import ProductManager from "./productManager.js";
 
+const manager = new ProductManager();
 const app = express();
 const port = 8080;
 
 app.get('/products', (req,res) => {
     const {limit} = req.query;
 
-    const manager = new ProductManager();
-    const products = manager.getProducts();
-    return res.json({productos:products})
+    return res.json({ productos: manager.getProducts(limit) })
 })
 
 app.get('/products/:pid', (req, res) => {
     const { pid } = req.params;
-    const manager = new ProductManager();
-    const product = manager.getProductById(Number(pid));
-    return res.json({producto:product});
+
+    return res.json({ producto: manager.getProductById(Number(pid)) });
 })
 
 app.listen(port, () => {
