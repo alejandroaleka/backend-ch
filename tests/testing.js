@@ -1,7 +1,6 @@
-const file = "data/products.json";
 import ProductManager from "../src/productManager.js";
 
-const manager = new ProductManager(file);
+const manager = new ProductManager();
 
 console.clear();
 

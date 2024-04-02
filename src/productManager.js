@@ -6,8 +6,8 @@ class ProductManager {
   #products;
   #path;
     constructor() {
-        this.#products = this.#readProductsFromFile(); //Se inicializa el arreglo vacío
-        this.#path = "../data/products.json";
+      this.#path = './src/data/products.json';
+      this.#products = this.#readProductsFromFile();
     }
 
     #readProductsFromFile(){

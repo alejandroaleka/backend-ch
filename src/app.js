@@ -6,9 +6,9 @@ const app = express();
 const port = 8080;
 
 app.get('/products', (req,res) => {
-    const {limit} = req.query;
+    const { limit } = req.query;
 
-    return res.json({ productos: manager.getProducts(limit) })
+    return res.json({ productos: manager.getProducts(Number(limit)) })
 })
 
 app.get('/products/:pid', (req, res) => {
