@@ -1,21 +1,16 @@
 import express from "express";
-import ProductManager from "./productManager.js";
+import products from "./routers/products.js";
+import carts from "./routers/carts.js";
 
-const manager = new ProductManager();
 const app = express();
 const port = 8080;
 
-app.get('/products', (req,res) => {
-    const { limit } = req.query;
+app.use(express.json())
+app.use(express.urlencoded({ extended:true }))
 
-    return res.json({ productos: manager.getProducts(Number(limit)) })
-})
+app.use('/api/products', products);
+app.use('/api/carts', carts);
 
-app.get('/products/:pid', (req, res) => {
-    const { pid } = req.params;
-
-    return res.json({ producto: manager.getProductById(Number(pid)) });
-})
 
 app.listen(port, () => {
     console.log(`Aplicación ejecutadose en el puerto ${port}`)
