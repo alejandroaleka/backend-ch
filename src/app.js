@@ -6,6 +6,7 @@ import ProductManager from "./dao/productManager.js";
 import products from "./routers/products.js";
 import carts from "./routers/carts.js";
 import views from "./routers/views.js"
+import { dbConnection } from "./db/config.js";
 
 const app = express();
 const port = 8080;
@@ -26,6 +27,9 @@ app.set('view engine', 'handlebars');
 app.use('/', views);
 app.use('/api/products', products);
 app.use('/api/carts', carts);
+
+
+await dbConnection();
 
 
 const expressServer = app.listen(port, () => {
