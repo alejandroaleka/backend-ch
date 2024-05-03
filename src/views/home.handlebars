@@ -1,0 +1,48 @@
+<div>
+    <h1>Productos disponibles</h1>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>description</th>
+                    <th>code</th>
+                    <th>price</th>
+                    <th>status</th>
+                    <th>stock</th>
+                    <th>category</th>
+                    <th>thumbnails</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each productos}}
+                <tr>
+                    <td>{{this.id}}</td>
+                    <td>{{this.title}}</td>
+                    <td>{{this.description}}</td>
+                    <td>{{this.code}}</td>
+                    <td>{{this.price}}</td>
+                    <td>
+                        {{#if this.status}}
+                        Activo
+                        {{this.status}}
+                        {{else}}
+                        Desactivado
+                        {{/if}}
+                    </td>
+                    <td>{{this.stock}}</td>
+                    <td>{{this.category}}</td>
+                    <td>
+                        {{#if this.thumbnails}}
+                        <a href="{{this.thumbnails.[0]}}" target="_blank">{{this.thumbnails.[0]}}</a>
+                        {{else}}
+                        No hay imagen disponible
+                        {{/if}}
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
