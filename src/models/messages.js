@@ -7,4 +7,4 @@ const MessagesSchema = new Schema({
     message:{type:String, required:[true, 'Message es obligatorio']}
 });
 
-export const messagesModel = model(nameCollection, ProductSchema)
+export const messagesModel = model(nameCollection, MessagesSchema)

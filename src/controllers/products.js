@@ -2,13 +2,18 @@ import { request, response } from "express";
 import { productModel } from '../models/products.js';
 
 export const getProducts = async (req = request, res = response) => {
-    //const limit = parseInt(req.params.limit, 10);
     try {
+        const { limit } = parseInt(req.params.limit, 10);
         if(isNaN(limit)) {
             return res.status(400).json({error: `solo se aceptan números`})
         }
-        const products = await productModel.find();
-        return res.json({ products })
+
+        const [products, total] = await Promise.all([
+            productModel.find(),
+            productModel.countDocuments()
+        ]);
+        
+        return res.status(200).json({ total, products })
     } catch (error) {
         console.log(`getProducts fallo con error: `, error)
         return res.status(500).json({msg:'Error: Contactar al administrador'})
@@ -22,7 +27,7 @@ export const getProductById = async (req = request, res = response) => {
             return res.status(400).json({error: `solo se aceptan números en el query param`})
         }
         const product = await productModel.findById(pid);
-        return res.json({ product })
+        return res.status(200).json({ product })
     } catch (error) {
         console.log(`getProductById fallo con error: `, error)
         return res.status(500).json({msg:'Error: Contactar al administrador'})
@@ -51,7 +56,7 @@ export const updateProduct = async (req = request, res = response) => {
             return res.status(400).json({error: `solo se aceptan números en el query param`})
         }
         const product = await productModel.findByIdAndUpdate(pid);
-        return res.status(200).json({result});
+        return res.status(200).json({msg:'Produto actualizado', product});
     } catch (error) {
         console.log(`updateProduct fallo con error: `, error)
         return res.status(500).json({msg:'Error: Contactar al administrador'})

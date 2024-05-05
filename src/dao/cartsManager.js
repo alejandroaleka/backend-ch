@@ -43,7 +43,7 @@ class CartsManager {
       return newCart;
     };
     
-    getCartsById(id) {
+    getCartById(id) {
       if(!this.#carts) {
           throw new Error("El archivo JSON está vacío.");
       }
